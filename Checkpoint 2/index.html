@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="busqueda">
+    <div id="card-container"></div>
+    <script>
+        async function loadAPI(characterName){
+            try { 
+                const url = `https://rickandmortyapi.com/api/character/?name=${characterName}`;
+                const response = await fetch(url);
+                const data = await
+                response.json();
+                const cardContainer = Document.getElementById("card-container")
+                console.log(data)
+                data.results.forEach(character => {
+                    const card = document.createElement("div")
+                    const titulo = document.createElement("h3")     
+                    titulo.innerText =character.name 
+
+
+                });
+        } 
+    }
+    </script>
+    
+</body>
+</html>
